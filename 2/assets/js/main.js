@@ -1,3 +1,24 @@
+//lesson exercise (hours/minutes)
+let time = prompt('What time is it at the moment?');
+console.log(time);
+answer = time.split(':');
+const full_minutes = 1440;
+console.log(full_minutes);
+let hour = answer[0]*60;
+console.log(hour);
+let minute = Number(answer[1]);
+console.log(minute);
+let full = hour + minute;
+console.log(full);
+let difference = full_minutes - full;
+console.log(difference);
+let differenceMinutes = difference % 60;
+console.log(differenceMinutes);
+let differenceHours = (difference - differenceMinutes)/60;
+console.log(differenceHours);
+alert(`${differenceHours<10 ? "0"+differenceHours : differenceHours}:${differenceMinutes<10 ? "0" + differenceMinutes : differenceMinutes} hours and minutes left until tomorrow!`) 
+
+
 // min
 
 //#1
@@ -27,9 +48,9 @@ alert('There are ' + number + ' files on the USB-flash with memory ' + flash + '
 //norm
 
 //#1
-let sum = parseInt(prompt('What sum do you have in your wallet (UAH)?'))
+let sum = parseInt(prompt('What sum do you have in your wallet (UAH)?'));
 console.log(sum);
-let one = parseInt(prompt('How much does one chocolate cost (UAH)?'))
+let one = parseInt(prompt('How much does one chocolate cost (UAH)?'));
 console.log(one);
 let num = Math.floor(sum/one).toFixed(0);
 console.log(num);
@@ -57,15 +78,15 @@ const percent = (0.05/12).toFixed(4);
 console.log(percent);
 const month = 2;
 let money = (deposit * percent * month).toFixed(0);
-alert('Your money sum will be - ' + money + 'UAH, if you put on deposit ' + deposit + 'UAH with ' + percent + '% for ' + month + ' months.')
+alert('Your money sum will be - ' + money + 'UAH, if you put on deposit ' + deposit + 'UAH with ' + percent + '% for ' + month + ' months.');
 
 //#2
-console.log('2 && 0 && 3') 
-2 && 0 && 3 - false(0) //шукає перше хибне значення, у цьому випадку false - 0
+console.log('2 && 0 && 3');
+2 && 0 && 3 - false(0); //шукає перше хибне значення, у цьому випадку false - 0
 
-console.log('2 || 0 || 3')
-2 || 0 || 3 - true(2) //повертає перше правдиве значення, у цьому випадку true - 2
+console.log('2 || 0 || 3');
+2 || 0 || 3 - true(2); //повертає перше правдиве значення, у цьому випадку true - 2
 
-console.log('2 && 0 || 3')
-2 && 0 || 3 - true(3) //послідовність дій зліва направо, перше хибне - 0, друге правдиве - 3, відповідно true - 3
+console.log('2 && 0 || 3');
+2 && 0 || 3 - true(3); //послідовність дій зліва направо, перше хибне - 0, друге правдиве - 3, відповідно true - 3
 
