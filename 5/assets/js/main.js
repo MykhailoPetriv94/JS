@@ -53,8 +53,8 @@ console.log(car.check('Diego'));
 console.log(car.check('Alex'));
 //__________//
 let distance = 180;
-console.log(`To drive ${distance} kilometres i need a fuel - ${Math.floor(car.fuelConsumption(distance))} liters!`);
-console.log(`To drive ${distance} kilometres i need a time - ${(car.time(distance)-(car.time(distance)-Math.floor(car.time(distance))))} hours and ${Math.floor((car.time(distance)-Math.floor(car.time(distance)))*60)} minutes!`);
+console.log(`To drive ${distance} kilometres I need a fuel - ${Math.floor(car.fuelConsumption(distance))} liters!`);
+console.log(`To drive ${distance} kilometres I need a time - ${(car.time(distance)-(car.time(distance)-Math.floor(car.time(distance))))} hours and ${Math.floor((car.time(distance)-Math.floor(car.time(distance)))*60)} minutes!`);
 
 //_________//
 console.log('________________________')
@@ -100,7 +100,6 @@ console.log('________________________')
 //max
 
 //#3
-
 let count = {
     first: ['num:', 2, 'den:', 4],
     second: ['num:', 2, 'den:', 3],
