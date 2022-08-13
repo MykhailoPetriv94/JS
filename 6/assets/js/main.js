@@ -72,9 +72,9 @@ shoppingList.sort(function (a, b) {
 console.log('Shopping list', shoppingList)
 
 //#2
-function bought(array, value) {
-    index = array.findIndex(product => product.name === value)
-    array[index].bought = true
+function bought(obj, mean) {
+    index = obj.findIndex(product => product.name === mean)
+    obj[index].bought = true
 } bought(shoppingList, 'water')
   bought(shoppingList, 'meat')
   bought(shoppingList, 'potatoes')
@@ -83,10 +83,10 @@ console.log('Bought product', shoppingList)
 //norm
 
 //#1
-function remove(array, value) {
-    i = array.findIndex(product => product.name === value)
+function remove(obj, mean) {
+    i = obj.findIndex(product => product.name === mean)
     let add = []
-    array.forEach((element, index) => {
+    obj.forEach((element, index) => {
         if (index !== i) {
             add.push(element)
         }
@@ -96,10 +96,10 @@ function remove(array, value) {
 console.log('Remove the product from the shopping list', remove(shoppingList, 'onions'))
 
 //#2
-function add(array, name, number, price) {
-    toAdd = array.findIndex(product => product.name === name)
+function add(obj, name, number, price) {
+    toAdd = obj.findIndex(product => product.name === name)
     if (toAdd === -1) {
-        array.push({
+        obj.push({
             name: name,
             number: number,
             price: price,
@@ -108,8 +108,8 @@ function add(array, name, number, price) {
           
         })
     } else {
-        array[toAdd].number += number
-        array[toAdd].sum = array[toAdd].sum + number * price
+        obj[toAdd].number += number
+        obj[toAdd].sum = obj[toAdd].sum + number * price
     }
 }
 add(shoppingList,'pasta', 3, 35)
@@ -118,36 +118,36 @@ console.log('Add the product to the shopping list', shoppingList)
 //max
 
 //#1
-let count = array => array.reduce(function (acc, product){ return acc + product.number; }, 0)
+let count = obj => obj.reduce(function (acc, product){ return acc + product.number; }, 0)
 console.log('Number of products are: ', count(shoppingList))
 
 //#2
 
 //all bought
-function buy(array) {
+function buy(obj) {
     let summary = 0;
-    let arr =[]
-    array.map(item => {
-        arr.push(item.number*item.price)
+    let mass =[]
+    obj.map(item => {
+     mass.push(item.number*item.price)
     });
-    for(let i = 0; i < arr.length; i++){
-        summary += arr[i]
+    for(let i = 0; i < mass.length; i++){
+        summary += mass[i]
     }
     return summary
 };
 console.log('Summary to buy:', buy(shoppingList));
 
 //all not bought
-function buyNot(array) {
+function buyNot(obj) {
     let summary = 0;
-    let arr =[]
-    array.map(item => {
+    let mass =[]
+    obj.map(item => {
         if( item.bought == false){
-            arr.push(item.number*item.price)
+         mass.push(item.number*item.price)
         }
     });
-    for(let i = 0; i < arr.length; i++){
-        summary += arr[i]
+    for(let i = 0; i < mass.length; i++){
+        summary += mass[i]
     }
     return summary
 };
@@ -155,9 +155,9 @@ console.log('Summary not to buy:', buyNot(shoppingList));
 
 //#3
 
-function sort(array, value) {
-    if(value == 'less'){
-        array.sort(function(a, b) {
+function sort(obj, mean) {
+    if(mean == 'less'){
+        obj.sort(function(a, b) {
             if(a.sum > b.sum){
                 return 1
             }
@@ -165,10 +165,10 @@ function sort(array, value) {
                 return -1
             }
         })
-        return array
+        return obj
     } 
-    if(value == 'more'){
-        array.sort(function(a, b) {
+    if(mean == 'more'){
+        obj.sort(function(a, b) {
             if(a.sum < b.sum){
                 return 1
             }
@@ -176,15 +176,15 @@ function sort(array, value) {
                 return -1
             }
         })
-        return array
+        return obj
     } 
-    if(value == '='){
-        array.sort(function(a, b){
+    if(mean == '='){
+        obj.sort(function(a, b){
             if(a.sum = b.sum){
                 return 0
             }
         })
-        return array
+        return obj
     } 
 }
 console.log( 'Less>>>', sort(shoppingList, 'less'))
