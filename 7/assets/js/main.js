@@ -85,7 +85,7 @@ class Employee {
         this.salary = salary;
     }
 }
-const arrEmployees = [
+const company = [
     new Employee("Олег Дем'янів", 24, '2 years' , "виконавець робіт", '25000 UAH',),
     new Employee("Дмитро Говзан", 35, '13 years',"старший виконавець робіт", '32000 UAH'),
     new Employee("Степан Коваль", 59, '34 years',"керівник проекту", '50000 UAH'),
@@ -98,17 +98,17 @@ const arrEmployees = [
     new Employee("Вероніка Данилюк", 22, '1 year', "помічник HR-керівника", '28000 UAH')
 ]
 class EmpTable {
-    constructor(arr) {
-        this.arr = arr;
+    constructor(obj) {
+        this.obj = obj;
     }
     getHTML() {
         document.write('<table style="border: 1px solid; margin: 20px 50px"><thead><tr><th style="border: 1px solid;">NAME</th><th style="border: 1px solid;">AGE</th><th style="border: 1px solid;">EXPERIENCE</th><th style="border: 1px solid;">POSITION</th><th style="border: 1px solid;">SALARY</th></tr></thead>')
         let row = '<tbody>'
-        this.arr.forEach(element => {
+        this.obj.forEach(element => {
             row += `<tr><td style="border: 1px solid;">${element.name}</td><td style="border: 1px solid;">${element.age}</td><td style="border: 1px solid;">${element.experience}</td><td style="border: 1px solid;">${element.position}</td><td style="border: 1px solid;">${element.salary}</td><tr>`
         })
         document.write(row + '</tbody>' + '</table>')
     }
 }
-const EmpTableNew = new EmpTable(arrEmployees)
+const EmpTableNew = new EmpTable(company)
 EmpTableNew.getHTML()
