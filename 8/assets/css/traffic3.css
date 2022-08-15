@@ -1,0 +1,54 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+.h1 {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.traffic {
+border-radius: 3px;
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 200px;
+margin-left: 50px;
+margin-top: 50px;
+}
+
+.lights {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+margin: 10px;
+}
+
+.btn {
+  width: 200px;
+  font-size: 30px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#red {
+background-color: red;
+border-color: red;
+}
+
+#yellow {
+background-color: yellow;
+border-color: yellow;
+}
+
+#green {
+background-color: rgb(3, 205, 3);
+border-color: rgb(3, 205, 3);
+}

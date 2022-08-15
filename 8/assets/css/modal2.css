@@ -1,0 +1,22 @@
+#container {
+  text-align: center;
+  margin-top: 450px;
+}
+
+#main_window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  background-color: darkblue;
+  color: white;
+  font-weight: 300;
+  font-size: 80px;
+  text-align: center;
+}
+
+.close_button {
+  float: right;
+}
