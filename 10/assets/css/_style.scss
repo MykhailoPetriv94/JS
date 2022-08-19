@@ -1,0 +1,288 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    padding: 82px 220px; 
+    width: $desktop;
+    background: $darkBlue;
+    position: relative; 
+
+    .container__content {
+        margin: 0 auto; 
+        padding: 154px 200px; 
+        width: 1000px,;
+        position: relative;
+
+        .container__content-background {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            position: absolute; 
+            background-image: url(../img/background.png);
+            background-position: center;
+            background-size: 100%;
+        }
+
+        .container__content-backgroundCov {
+            top: 0;
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            position: absolute; 
+            background: $bgCoverColor;
+        }
+
+        .game__info {
+            width: 600px; 
+            height: 552px;
+            position: relative;
+            z-index:  1;
+
+            .options {
+                padding: 28px 50px; 
+                width: 100%; 
+                height: 120px;
+                background: $darkBlue;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .item {
+                    width: 120px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: column;   
+                    cursor: pointer;
+                    
+                    .logo {
+                        margin-bottom: 15px;
+                        width: 24px;
+                        height: 22px; 
+                    }
+
+                    .image__element,
+                    .image__element--fill {
+                        @include transition(0.15s);
+                    }
+
+                    .text {
+                        font-size: 16px;
+                        line-height: 28px;
+                        font-weight: 400;
+                        font-family: 'Lato';
+                        font-style: normal;
+                        text-transform: uppercase;
+                        color: #8D91A3;
+                        @include transition(0.15s);
+                    }
+
+                    &:hover .image__element {
+                        stroke: white;
+                    }
+
+                    &:hover .image__element--fill {
+                        fill: white;
+                    }
+                    &:hover .text {
+                        color: white;
+                    }
+
+                    &:focus .image__element {
+                        stroke: white;
+                    }
+
+                    &:focus .image__element--fill {
+                        fill: white;
+                    }
+                    &:focus .text {
+                        color: white;
+                    }
+                } 
+            }
+
+.active {
+    display: flex;
+}
+
+            .card {
+                padding: 60px 40px;
+                width: 100%;
+                background-color: $deepBlue;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                display: none;
+                
+                &.active {
+                    display: flex;
+                }
+
+                .left {
+                    width: 160px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .poster {
+                        margin-bottom: 25px;
+                    }
+
+                    .rating {
+                        width: 100%;
+                        display: flex;
+                        align-items:center;
+                        justify-content: center;
+
+                        .rating__star {
+                            cursor: pointer;
+                            
+                            .rating__star--fill{
+                                @include transition(0.2s);
+                            }
+                        }
+                        .rating__star + .rating__star {
+                            margin-left: 10px;
+                            
+                        }
+                    }
+                }
+
+                .text__info {
+                    width: 319px;
+                    @include flex-center-column;
+
+                    .description {
+                        margin-bottom: 50px;
+                        width: 100%;
+                        position: relative;
+                        @include flex-left-column;
+
+                        .circle {
+                            top: 0;
+                            right: 0;
+                            width: 75px;
+                            height: 75px;
+                            position: absolute;
+                            @include flex-center-column;
+                            
+                            .circle__empty {
+                                position: absolute;
+                            }
+                            .circle__fill {
+                                position: absolute;
+                                @include transition(0.3s);
+                            }
+                            .circle__value {
+                                font-size: 20px;
+                                line-height: 22px;
+                                font-weight: 400;
+                                font-family: 'Lato';
+                                font-style: normal;
+                                text-align: center;
+                                color: $text;
+                                @include transition(0.3s);
+                            }
+                        }
+
+                        .description__title,
+                        .description__note,
+                        .description__text {
+                            font-weight: 400;
+                            font-family: 'Lato';
+                            font-style: normal; 
+                        }
+
+                        .description__title {
+                            margin: 15px 0;
+                            font-size: 32px;
+                            line-height: 32px;
+                            color: $white; 
+                        }
+
+                        .description__note {
+                            margin-bottom: 40px;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: $white;
+                        }
+
+                        .description__text {
+                            font-size: 14px;
+                            line-height: 22px;
+                            color: $text;
+                        }
+                    }
+
+                    .purchase {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items:center;
+                        
+                        .purchase__price {
+                            margin-right: 50px;
+
+                            .discount {
+                                font-size: 12px;
+                                line-height: 20px;
+                                font-weight: 400;
+                                font-family: 'Lato';
+                                font-style: normal;
+                                color: $yellow;
+                            }
+
+                            .price {
+                                font-size: 32px;
+                                line-height: 32px;
+                                font-weight: 400;
+                                font-family: 'Lato';
+                                font-style: normal;
+                                color: #FFFFFF;
+                            }
+                        }
+                        .button {
+                            padding: 20px 30px;
+                            font-size: 16px;
+                            line-height: 20px;
+                            font-weight: 400;
+                            font-family: 'Lato';
+                            font-style: normal;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 2px;
+                            border: 0;
+                            background: #13E28D;
+                            text-transform: uppercase;
+                            color: #FFFFFF;
+                            @include transition(0.5s);
+
+                            &:hover {
+                                @include resize(1.05)
+                            }
+
+                            &:active {
+                                @include resize(1.25)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.display {
+    opacity:1
+}
+
+.notShow {
+    opacity:0
+}
