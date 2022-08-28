@@ -1,0 +1,38 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  width: 400px;
+  height: 320px;
+  position: absolute;
+  background-color: rgb(30, 254, 30);
+  top: 300px;
+  right: 0;
+  opacity: 70%;
+  font-size: 18px;
+}
+
+.info__window {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
