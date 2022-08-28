@@ -1,0 +1,797 @@
+*,
+::before,
+::after {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+  background-color: $brown-light;
+
+  .header__container {
+    padding: 0 100px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $lg;
+    @include flex-between;
+    @include maxWidth(890px) {
+      padding: 0 15px;
+    }
+    @include maxWidth(630px) {
+      padding: 20px 10px;
+    }
+
+    .logo {
+      width: 182px;
+      height: 34px;
+      min-width: 182px;
+      min-height: 34px;
+      position: relative;
+      @include maxWidth($md) {
+        width: 168px;
+        height: 31px;
+        min-width: 168px;
+        min-height: 31px;
+      }
+      @include maxWidth($s) {
+        width: 100px;
+        height: 19px;
+        min-width: 100px;
+        min-height: 19px;
+      }
+
+      .logo__image {
+        width: 100%;
+      }
+    }
+
+    .menu {
+      .menu__list {
+        list-style: none;
+        display: flex;
+
+        .item {
+          padding:28px 15px;
+          @include transition(0.15s);
+          @include maxWidth($md) {
+            padding:20px 15px;
+          }
+          @include maxWidth(630px) {
+            display: none;
+          }
+
+          &:hover {
+            background-color: $tomato-light;
+
+            .item__link {
+              color: $white;
+            }
+          }
+
+          &__link {
+            text-decoration: none;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: $black ;
+            @include transition(0.15s);
+            @include flexCenter;
+            @include maxWidth($md) {
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .icons__panel {
+      width: 102px;
+      height: 36px;
+      @include flexCenter;
+      @include maxWidth($md) {
+        width: 74px;
+        height: 27px;
+      }
+      @include maxWidth($s) {
+        width: 55px;
+        height: 20px;
+      }
+
+      .icons__link {
+        @include flexCenter;
+
+        & + .icons__link {
+          margin-left: 30px;
+          @include maxWidth($md) {
+            margin-left: 20px;
+          }
+          @include maxWidth($s) {
+            margin-left: 15px;
+          }
+        }
+
+        .search,
+        .profile {
+          width: 36px;
+          height: 36px;
+          @include maxWidth($md) {
+            width: 27px;
+            height: 27px;
+          }
+          @include maxWidth($s) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .burger {
+      display: none;
+      @include maxWidth($s) {
+        width: 22px;
+        height: 20px;
+        @include flexCenter;
+      }
+    }
+  }
+}
+
+.main {
+  .main__container {
+    margin: 0 auto; 
+    width: 100%;
+
+    .top__slider {
+      @include maxWidth($md) {
+        height: 384px;
+        min-height: 384px;
+      }
+
+      .slick-dots li {
+        margin: 0;
+        &:nth-child(2){
+          margin: 0 30px;
+        }
+      }
+
+      .top__element {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        .top__slider-image {
+          width: 100%;
+          @include maxWidth($md) {
+            height: 384px;
+            min-height: 384px;
+            object-fit: cover;
+          }
+          @include maxWidth(500px) {
+            object-position: -116px;
+          }
+        }
+  
+        .top__slider-content {
+          position: absolute;
+          top:0;
+          padding-right: 100px;
+          padding-top: 120px;
+          text-align: center;
+          @include maxWidth(820px) {
+            padding-right: 82px;
+            padding-top: 60px;
+          }
+          @include maxWidth(500px) {
+            padding-right: 11px;
+            padding-top: 60px;
+          }
+
+          .text {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 61px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $brown-light;
+            width: 400px;
+            margin-bottom: 50px;
+            @include maxWidth($md) {
+              font-size: 26px;
+              line-height: 32px;
+              margin-bottom: 20px;
+              width: 210px;
+            }
+          }
+
+          .button {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $white;
+            padding: 15px 57px;
+            text-decoration: none;
+            border: 2px solid $brown-light;
+            @include transition(0.3s);
+            @include maxWidth($md) {
+              padding: 10px 27px;
+            }
+
+            &:hover {
+              background: $tomato-light;
+              border: 2px solid $tomato-light;
+            }
+          }
+        }
+      }
+
+      .slick-dots {
+        bottom: 50px;
+        @include maxWidth($md) {
+          bottom: 20px;
+        }
+        & li button:before {
+          color: $dot-inactive;
+          opacity:1;
+          padding: 0;
+          width: 12px;
+          height: 12px;
+        }
+        & li.slick-active button:before {
+          color: $tomato-light;
+          opacity:1;
+          width: 12px;
+          height: 12px;
+          font-size: 12px;
+        }
+      }
+      }
+    }  
+
+    .top-dots li button:before {
+      font-size: 12px;
+      @include maxWidth($md) {
+        font-size: 12px;
+      }
+    }
+    
+    .products {
+      margin: 0 auto;
+      padding: 70px 40px; 
+      text-align: center;
+      @include maxWidth($md) {
+        padding: 50px 7px;
+      }
+      @include maxWidth($s) {
+        padding: 50px 0px;
+      }
+      
+      .products__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $black;
+      }
+
+      .slider__container {
+        @include flexCenter;
+        position: relative;
+
+        .left {
+          position:absolute;
+          top:46%;
+          left:0;
+          cursor: pointer;
+          width: 40px;
+          height: 74px;
+          @include maxWidth($md) {
+            width: 16px;
+            height: 30px;
+          }
+          @include maxWidth($s) {
+            display: none;
+          }
+
+          &:hover .arrow--fill {
+            fill: $tomato-light;
+          }
+        }
+
+        .right {
+          position:absolute;
+          top:46%;
+          right:0;
+          cursor: pointer;
+          width: 40px;
+          height: 74px;
+          @include maxWidth($md) {
+            width: 16px;
+            height: 30px;
+          }
+          @include maxWidth($s) {
+            display: none;
+          }
+          &:hover .arrow--fill {
+            fill: $tomato-light;
+          }
+        }
+
+        .arrow--fill {
+          fill: $arrow-inactive;
+        }
+      }
+
+      .products__slider {
+        margin: 50px 0;
+        width: 85.7%;
+        height: 440px ;
+        min-width: 0;
+        position: relative;
+        
+        .slick-dots {
+          position: relative;
+          bottom:0;
+          & li button:before {
+            color: $dark-dot-inactive;
+            opacity:1;
+            padding: 0;
+            width: 12px;
+            height: 12px;
+          }
+          & li.slick-active button:before {
+            color: $tomato-light;
+            opacity:1;
+            width: 12px;
+            height: 12px;
+            font-size: 12px;
+          }
+        }
+        
+        .slick-dots li:nth-child(2) {
+          margin: 0;
+        }
+
+        .products__element {
+          margin: 0 10px;
+          padding: 20px 10px;
+          width: 224px;
+          height: 437px;
+          justify-content: flex-start;
+          position: relative;
+          border: 1px solid #F8F1EA;
+          @include flex-center-column;
+          @include maxWidth($s) {
+            width: 299px;
+            height: 489px;
+          }
+  
+          .element__status {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $brown-light;
+            padding: 4px 6px;
+            background-color: #F16A50;
+            position: absolute;
+            top: 0;
+            left:0;
+          }
+
+          .sold {
+              color: $black;
+              background-color: $brown-light;
+          }
+          
+          .element__image {
+            margin-bottom: 10px;
+  
+            .image__item {
+              width: 100%;
+            }
+          }
+  
+          .name {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+            font-family: 'Montserrat';
+            font-style: normal;
+            text-align: center;
+            color: $black;
+          }
+  
+          .price {
+            margin: 8px 0 10px;
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 700;
+            font-family: 'Montserrat';
+            font-style: normal;
+            text-align: center;
+            color: $black;
+          }
+        }
+      }
+      
+      .products__button {
+        margin-top: 50px;
+        width: 100%;
+        display:block;
+        @include flexCenter;
+        @include maxWidth($md) {
+          margin-top: 40px;
+        }
+        @include maxWidth($s) {
+          margin-top: 72px;
+        }
+      }
+
+      .button {
+        padding: 15px 57px;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+        font-family: 'Montserrat';
+        font-style: normal;
+        text-align: center;
+        text-transform: uppercase;
+        color: $black;
+        border: 2px solid $black;
+        text-decoration: none;
+        @include flexCenter;
+        @include transition(0.3s);
+        @include maxWidth($md) {
+          padding: 10px 20px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        &:hover {
+          background: $tomato-light;
+          color: $brown-light;
+          border: 2px solid $tomato-light;
+        }
+
+        &:active {
+          @include resize(1.05);
+        }
+      }
+    }
+      
+    .partners {
+      margin: 0 auto;
+      text-align: center;
+      padding: 70px 40px;
+      background: #F8F1EA;
+      @include maxWidth($md) {
+        padding: 50px 0;
+      }
+
+      .partners__title {
+        font-size: 32px;
+        line-height: 39px;
+        font-weight: 700;
+        font-family: 'Montserrat';
+        font-style: normal;
+        text-align: center;
+        text-transform: uppercase;
+        color: $black;
+      }
+
+      .slider__container {
+        height: 70px; 
+        min-width: 0;
+        position: relative;
+        @include flexCenter;
+         
+        .partners__left {
+          width: 40px;
+          height: 74px;
+          top:5%;
+          left:0;
+          position:absolute;
+          cursor: pointer;
+          @include maxWidth($md) {
+            width: 16px;
+            height: 30px;
+            top: 32%;
+          }
+          @include maxWidth($s) {
+            display: none;
+          }
+          &:hover .arrow--fill {
+            fill: $tomato-light;
+          }
+        }
+
+        .partners__right {
+          width: 40px;
+          height: 74px;
+          top:5%;
+          right:0;
+          position:absolute;
+          cursor: pointer;
+          @include maxWidth($md) {
+            width: 16px;
+            height: 30px;
+            top: 32%;
+          }
+          @include maxWidth($s) {
+            display: none;
+          }
+
+          &:hover .arrow--fill {
+            fill: $tomato-light;
+          }
+        }
+
+        .arrow--fill {
+          fill: $arrow-inactive;
+        }
+
+        .partners__slider {
+          margin-top: 40px;
+          padding: 0;
+          width: 85.7%;
+          min-width: 0;
+          position: relative;
+          @include maxWidth($md) {
+            width: 95%;
+          }
+          .slick-list {
+            height: 70px;
+            padding: 0;
+            min-width: 0;
+          }
+  
+          .slick-dots {
+            position: relative;
+            bottom:0;
+            & li button:before {
+              color: $dark-dot-inactive;
+              opacity:1;
+              padding: 0;
+              width: 12px;
+              height: 12px;
+            }
+            & li.slick-active button:before {
+              color: $tomato-light;
+              opacity:1;
+              width: 12px;
+              height: 12px;
+              font-size: 12px;
+            }
+          }
+
+          .slick-dots li:nth-child(2) {
+            margin: 0;
+          }
+
+          .partners__elements {
+            width: 114px;
+            height: 35px;
+            margin: 0 10px;
+
+            .partners__link {
+              width: 114px;
+              overflow: visible;
+  
+              .partners__image { 
+                overflow: visible;
+                width: 114px;
+  
+                .partners__logo {
+                  overflow: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.slick-dots li button {
+  padding: 0;
+}
+
+.footer {
+  background-color:$brown-dark;
+
+  .footer__container {
+    padding: 70px 130px 20px;
+    text-align: center;
+    @include maxWidth($md) {
+      padding: 50px 60px 20px 25px;
+    }
+    @include maxWidth(500px) {
+      padding: 50px 10px 30px;
+    }
+
+    .footer__content {
+      margin-bottom: 50px;
+      width: 100%;
+      display: flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      position: relative;
+      @include maxWidth($md) {
+        margin-bottom: 40px;  
+      }
+      @include maxWidth(500px) {
+        margin-bottom: 50px;  
+      }
+
+      .footer__container-logo {
+        top:0;
+        left:0;
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        @include maxWidth($md) {
+          position: relative;   
+        }
+        @include maxWidth(500px) {
+          position: absolute;
+          left:30%;
+        }
+      }
+  
+      .footer__menu {
+        margin-top: 65px;
+        text-align: left;
+        @include maxWidth($md) {
+          margin-top: 0; 
+        }
+        @include maxWidth(500px) {
+          margin-top: 90px; 
+        }
+
+        .menu__list {
+          list-style: none;
+          .element {
+            & + .element {
+              margin-top: 10px;
+            }
+            &:hover .element__link {
+              color: $tomato-light;
+            }
+
+            .element__link {
+              font-size: 20px;
+              line-height: 24px;
+              font-weight: 500;
+              font-family: 'Montserrat';
+              font-style: normal;
+              color: $brown-light;
+              text-decoration: none;
+              @include maxWidth($md) {
+                font-size: 16px;
+                line-height: 20px;     
+              }
+            }
+          }
+        }
+      }
+
+      .footer__contacts {
+        width: 331px;
+        display: flex;
+        align-items:flex-start;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        @include maxWidth($md) {
+          width: 176px;     
+        }
+        @include maxWidth(500px) {
+          margin-top: 90px; 
+          align-items:flex-end;
+        }
+
+        .contacts__title,
+        .phone {
+          font-size: 26px;
+          line-height: 32px;
+          font-weight: 500;
+          font-family: 'Montserrat';
+          font-style: normal;
+          color: $brown-light;
+          text-decoration: none;
+          @include maxWidth($md) {
+            font-size: 20px;
+            line-height: 24px;
+          }
+          
+        }
+        .socials {
+          margin: 48px 0 32px;
+          width: 100%;
+          height: 37px;
+          display: flex;
+          align-items:center;
+          justify-content: flex-start;
+          @include maxWidth($md) {
+            margin: 26px 0 20px;
+            height: 20px;
+          }
+          @include maxWidth($s) {
+            margin: 25px 0;
+          }
+  
+          .socials__item {
+            width: 30px;
+            height: 30px; 
+            @include maxWidth($md) {
+              width: 20px;
+              height: 20px;
+            }
+  
+            .socials__image {
+              width: 100%;
+              height: 100%;
+            }
+  
+            & + .socials__item {
+              margin-left: 30px;
+              @include maxWidth($md){
+                margin-left: 20px;
+              }
+            }
+  
+            &:hover .socials__image--fill {
+              fill: $tomato-light;
+            }
+            &:hover .socials__image--stroke {
+              stroke: $tomato-light;
+            }
+            .socials__image--fill {
+              fill: $brown-light;
+              @include transition(0.3s);
+            }
+            .socials__image--stroke {
+              stroke: $brown-light; 
+              @include transition(0.3s);
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 500;
+      font-family: 'Montserrat';
+      font-style: normal;
+      color: $brown-light;
+      @include maxWidth(500px){
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+  }
+}
