@@ -13,7 +13,7 @@
     padding: 0 100px;
     margin: 0 auto;
     width: 100%;
-    max-width: $lg;
+    max-width: $desktop;
     @include flex-between;
     @include maxWidth(890px) {
       padding: 0 15px;
@@ -28,13 +28,13 @@
       min-width: 182px;
       min-height: 34px;
       position: relative;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         width: 168px;
         height: 31px;
         min-width: 168px;
         min-height: 31px;
       }
-      @include maxWidth($s) {
+      @include maxWidth($mobile) {
         width: 100px;
         height: 19px;
         min-width: 100px;
@@ -54,7 +54,7 @@
         .item {
           padding:28px 15px;
           @include transition(0.15s);
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             padding:20px 15px;
           }
           @include maxWidth(630px) {
@@ -79,7 +79,7 @@
             color: $black ;
             @include transition(0.15s);
             @include flexCenter;
-            @include maxWidth($md) {
+            @include maxWidth($tablet) {
               font-size: 16px;
               line-height: 20px;
             }
@@ -92,11 +92,11 @@
       width: 102px;
       height: 36px;
       @include flexCenter;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         width: 74px;
         height: 27px;
       }
-      @include maxWidth($s) {
+      @include maxWidth($mobile) {
         width: 55px;
         height: 20px;
       }
@@ -106,10 +106,10 @@
 
         & + .icons__link {
           margin-left: 30px;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             margin-left: 20px;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             margin-left: 15px;
           }
         }
@@ -118,11 +118,11 @@
         .profile {
           width: 36px;
           height: 36px;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 27px;
             height: 27px;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             width: 20px;
             height: 20px;
           }
@@ -132,7 +132,7 @@
 
     .burger {
       display: none;
-      @include maxWidth($s) {
+      @include maxWidth($mobile) {
         width: 22px;
         height: 20px;
         @include flexCenter;
@@ -147,7 +147,7 @@
     width: 100%;
 
     .top__slider {
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         height: 384px;
         min-height: 384px;
       }
@@ -167,7 +167,7 @@
 
         .top__slider-image {
           width: 100%;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             height: 384px;
             min-height: 384px;
             object-fit: cover;
@@ -203,7 +203,7 @@
             color: $brown-light;
             width: 400px;
             margin-bottom: 50px;
-            @include maxWidth($md) {
+            @include maxWidth($tablet) {
               font-size: 26px;
               line-height: 32px;
               margin-bottom: 20px;
@@ -224,7 +224,7 @@
             text-decoration: none;
             border: 2px solid $brown-light;
             @include transition(0.3s);
-            @include maxWidth($md) {
+            @include maxWidth($tablet) {
               padding: 10px 27px;
             }
 
@@ -238,7 +238,7 @@
 
       .slick-dots {
         bottom: 50px;
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           bottom: 20px;
         }
         & li button:before {
@@ -261,7 +261,7 @@
 
     .top-dots li button:before {
       font-size: 12px;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         font-size: 12px;
       }
     }
@@ -270,10 +270,10 @@
       margin: 0 auto;
       padding: 70px 40px; 
       text-align: center;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         padding: 50px 7px;
       }
-      @include maxWidth($s) {
+      @include maxWidth($mobile) {
         padding: 50px 0px;
       }
       
@@ -299,11 +299,11 @@
           cursor: pointer;
           width: 40px;
           height: 74px;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 16px;
             height: 30px;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             display: none;
           }
 
@@ -319,11 +319,11 @@
           cursor: pointer;
           width: 40px;
           height: 74px;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 16px;
             height: 30px;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             display: none;
           }
           &:hover .arrow--fill {
@@ -375,7 +375,7 @@
           position: relative;
           border: 1px solid #F8F1EA;
           @include flex-center-column;
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             width: 299px;
             height: 489px;
           }
@@ -437,10 +437,10 @@
         width: 100%;
         display:block;
         @include flexCenter;
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           margin-top: 40px;
         }
-        @include maxWidth($s) {
+        @include maxWidth($mobile) {
           margin-top: 72px;
         }
       }
@@ -459,7 +459,7 @@
         text-decoration: none;
         @include flexCenter;
         @include transition(0.3s);
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           padding: 10px 20px;
           font-size: 16px;
           line-height: 20px;
@@ -482,7 +482,7 @@
       text-align: center;
       padding: 70px 40px;
       background: #F8F1EA;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         padding: 50px 0;
       }
 
@@ -510,12 +510,12 @@
           left:0;
           position:absolute;
           cursor: pointer;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 16px;
             height: 30px;
             top: 32%;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             display: none;
           }
           &:hover .arrow--fill {
@@ -530,12 +530,12 @@
           right:0;
           position:absolute;
           cursor: pointer;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 16px;
             height: 30px;
             top: 32%;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             display: none;
           }
 
@@ -554,7 +554,7 @@
           width: 85.7%;
           min-width: 0;
           position: relative;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             width: 95%;
           }
           .slick-list {
@@ -624,7 +624,7 @@
   .footer__container {
     padding: 70px 130px 20px;
     text-align: center;
-    @include maxWidth($md) {
+    @include maxWidth($tablet) {
       padding: 50px 60px 20px 25px;
     }
     @include maxWidth(500px) {
@@ -638,7 +638,7 @@
       align-items:flex-start;
       justify-content: space-between;
       position: relative;
-      @include maxWidth($md) {
+      @include maxWidth($tablet) {
         margin-bottom: 40px;  
       }
       @include maxWidth(500px) {
@@ -651,7 +651,7 @@
         width: 150px;
         height: 30px;
         position: absolute;
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           position: relative;   
         }
         @include maxWidth(500px) {
@@ -663,7 +663,7 @@
       .footer__menu {
         margin-top: 65px;
         text-align: left;
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           margin-top: 0; 
         }
         @include maxWidth(500px) {
@@ -688,7 +688,7 @@
               font-style: normal;
               color: $brown-light;
               text-decoration: none;
-              @include maxWidth($md) {
+              @include maxWidth($tablet) {
                 font-size: 16px;
                 line-height: 20px;     
               }
@@ -704,7 +704,7 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
-        @include maxWidth($md) {
+        @include maxWidth($tablet) {
           width: 176px;     
         }
         @include maxWidth(500px) {
@@ -721,7 +721,7 @@
           font-style: normal;
           color: $brown-light;
           text-decoration: none;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             font-size: 20px;
             line-height: 24px;
           }
@@ -734,18 +734,18 @@
           display: flex;
           align-items:center;
           justify-content: flex-start;
-          @include maxWidth($md) {
+          @include maxWidth($tablet) {
             margin: 26px 0 20px;
             height: 20px;
           }
-          @include maxWidth($s) {
+          @include maxWidth($mobile) {
             margin: 25px 0;
           }
   
           .socials__item {
             width: 30px;
             height: 30px; 
-            @include maxWidth($md) {
+            @include maxWidth($tablet) {
               width: 20px;
               height: 20px;
             }
@@ -757,7 +757,7 @@
   
             & + .socials__item {
               margin-left: 30px;
-              @include maxWidth($md){
+              @include maxWidth($tablet){
                 margin-left: 20px;
               }
             }
